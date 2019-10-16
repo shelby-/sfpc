@@ -13,6 +13,9 @@ window.onload = function () {
 		markovChainGenerator(titles, markovTitles)
 		remix();
 	})
+
+	const date = new Date();
+	document.getElementById('date').innerText = date.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
 }
 
 // modified from https://medium.com/@alexkrameris/markov-chain-implementation-in-javascript-a698f371d66f

@@ -9,8 +9,16 @@
     <script type='text/javascript' src='https://code.jquery.com/jquery-3.4.1.min.js'></script>
     <title>ripped from the headlines</title>
     <style>
-      .main {
-        max-width: 800px;
+      main, body {
+        margin: 0;
+        font-size: 16px;
+      }
+      body {
+        padding: 0.5rem;
+      }
+      .main, #image {
+        width: 100%;
+        max-width:  50rem;
         margin: 0 auto;
       }
       .new-article {
@@ -18,18 +26,44 @@
       }
       h1 {
         font-size: 2.5rem;
+        font-weight: normal;
+      }
+      h4 {
+        text-align: right;
+        font-family: monospace;
+        font-weight: normal;
       }
       #image {
         overflow: hidden;
         height: 30rem;
-        width: 50rem;
         background: #000;
-        margin: 0 auto;
         position: relative;
       }
       .image-container {
         overflow: hidden;
         position: absolute;
+      }
+      button {
+        display: block;
+        margin: 0 auto;
+        font-family: monospace;
+        border: 1px solid blue;
+        font-size: 1rem;
+        color: blue;
+        cursor: pointer;
+        padding: 0.25rem 0.5rem;
+      }
+      button:hover {
+        background: blue;
+        color: #fff;
+      }
+      @media (max-width: 800px){
+        h1 {
+          font-size: 2rem;
+        }
+        #image {
+          height: 20rem;
+        }
       }
     </style>
   </head>
@@ -38,14 +72,16 @@
     <script src='./js/news-remix.js' type='text/javascript'></script>
 
     <div class='main'>
+      <h4 id='date'>
+      </h4>
       <h1 id='title'>
       </h1>
 
-      <div class='new-article'>
-        <button onclick='remix()'>new</button>
+      <div id='image'>
       </div>
 
-      <div id='image'>
+      <div class='new-article'>
+        <button onclick='remix()'>another</button>
       </div>
     </div>
   </body>
