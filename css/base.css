@@ -1,0 +1,19 @@
+main, body {
+	margin: 0;
+}
+body {
+	padding: 1rem;
+}
+#main {
+	max-width: 800px;
+	width: 100%;
+	margin: 0 auto;
+}
+a {
+	font-family: monospace;
+	color: blue;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}

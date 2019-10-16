@@ -24,14 +24,28 @@
       .new-article {
         margin: 1rem 0;
       }
+      header {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin: 2rem 0;
+        opacity: 0.5;
+      }
       h1 {
-        font-size: 2.5rem;
+        font-size: 2.75rem;
         font-weight: normal;
+        margin: 2rem 0;
+      }
+      h2 {
+        font-weight: normal;
+        margin: 0;
       }
       h4 {
-        text-align: right;
         font-family: monospace;
         font-weight: normal;
+        margin: 0;
       }
       #image {
         overflow: hidden;
@@ -61,6 +75,9 @@
         h1 {
           font-size: 2rem;
         }
+        h2, h4 {
+          font-size: 1rem;
+        }
         #image {
           height: 20rem;
         }
@@ -69,8 +86,13 @@
   </head>
   <body>
     <div class='main'>
-      <h4 id='date'>
-      </h4>
+      <header>
+        <h2 id='app-name'>
+        </h2>
+        <h4 id='date'>
+        </h4>
+      </header>
+
       <h1 id='title'>
       </h1>
 

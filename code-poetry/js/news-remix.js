@@ -69,8 +69,22 @@ function remix() {
 
 	document.getElementById('title').innerText = getMarkovText(markovTitles);
 	document.getElementById('image').innerHTML = imageSrc;
+	
+	setAppName();
 }
 
 function getOffset(max) {
 	return Math.floor(Math.random() * Math.floor(max));
+}
+
+function setAppName() {
+	let i = Math.floor(Math.random() * 5) + 2;
+	const realFake = ['Real', 'Fake'];
+
+	document.getElementById('app-name').innerText = '';
+	while (i > 0) {
+		document.getElementById('app-name').innerText += `${realFake[Math.random() > 0.5 ? 0 : 1]} `; 
+		i -= 1;
+	}
+	document.getElementById('app-name').innerText += ' News';
 }
