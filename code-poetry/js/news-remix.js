@@ -2,7 +2,7 @@ let titles = [];
 let imageUrls = [];
 const markovTitles = {};
 const markovContent = {};
-const incompleteClause = ['of', 'to', 'and', 'with', 'from', 'at', 'the', 'is', 'are', 'an', 'a', 'where', 'when', 'in'];
+const incompleteClause = ['of', 'to', 'and', 'with', 'from', 'at', 'the', 'is', 'are', 'an', 'a', 'where', 'when', 'in', 'on', 'their', 'her', 'his'];
 
 window.onload = function () {
 	$.get('https://newsapi.org/v2/top-headlines?country=us&apiKey=cb15d26e791f471abee466ce78d79760', data => {
@@ -43,7 +43,7 @@ function getMarkovText(markovChain) {
 	const words = Object.keys(markovChain)
 	let word = words[Math.floor(Math.random() * words.length)]
 	let result = ''
-	for (let i = 0; i < 25; i++ ) {
+	for (let i = 0; i < 12; i++ ) {
  		result += word.charAt(0).toUpperCase() + word.slice(1).toLowerCase() + ' ';
 		newWord =  markovChain[word][Math.floor(Math.random() * markovChain[word].length)]
 		word = newWord;
@@ -59,10 +59,10 @@ function getMarkovText(markovChain) {
 
 function remix() {
   	let imageSrc = '';
-  	let numImages = Math.floor(Math.random() * imageUrls.length);
+  	let numImages = Math.floor(Math.random() * imageUrls.length * 2) + 2;
 
   	for (let i = 0; i < numImages; i += 1) {
-	  	imageSrc += `<div class='image-container' style='width:${getOffset(140)}%'>
+	  	imageSrc += `<div class='image-container' style='width:${getOffset(160)}%'>
 	  		<img style='transform:translate(${getOffset(-50)}%,${getOffset(-50)}%)' src='${imageUrls[getOffset(imageUrls.length)]}'/>
 	  	</div>`;
 	 }
