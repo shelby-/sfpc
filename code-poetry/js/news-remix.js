@@ -59,10 +59,10 @@ function getMarkovText(markovChain) {
 
 function remix() {
   	let imageSrc = '';
-  	let numImages = Math.floor(Math.random() * imageUrls.length * 2) + 2;
+  	let numImages = Math.floor(Math.random() * imageUrls.length) + 4;
 
   	for (let i = 0; i < numImages; i += 1) {
-	  	imageSrc += `<div class='image-container' style='width:${getOffset(160)}%'>
+	  	imageSrc += `<div class='image-container' style='width:${getOffset(160)}%; transform:translate(${getOffset(50)}%, ${getOffset(50)}%,0)'>
 	  		<img style='transform:translate(${getOffset(-50)}%,${getOffset(-50)}%)' src='${imageUrls[getOffset(imageUrls.length)]}'/>
 	  	</div>`;
 	 }
